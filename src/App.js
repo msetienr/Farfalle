@@ -1,13 +1,23 @@
-import './App.css';
 import React from 'react';
-import Navbar from './Components/Navbar';
+import { BrowserRouter,Route,Routes  } from 'react-router-dom';
+import Navbar from './Components/Navbar'
+import IniciarSesion from './Pages/IniciarSesion';
+import Inicio from './Pages/Inicio';
+import Pedidos from './Pages/Pedidos';
 
-function App() {
+const App = () => {
   return (
-    <React.Fragment>
+    <div>
+      <BrowserRouter>
       <Navbar/>
-    </React.Fragment>
+        <Routes>
+          <Route path = '/' element = {<Inicio/>}/> 
+          <Route path = '/Pedidos' element = {<Pedidos/>}/>
+          <Route path = '/IniciarSesion' element = {<IniciarSesion/>}/>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
-}
+};
 
 export default App;

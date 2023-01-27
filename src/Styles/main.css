@@ -58,6 +58,7 @@ nav .list_item:hover{
 
 .login{
     float: right;
+    display:block;
     margin-right: 160px;
     margin-top: 13px;
     background-color: #00bfff;
@@ -106,7 +107,15 @@ nav .list_item:hover{
         display:block;
     }
 
+    .login{
+        float: center;
+        display: block;
+        position: fixed;
+        margin-top: 180px;
+        margin-left: 350px;
+    }
 }
+
 
 .navbar{
     display:flex;

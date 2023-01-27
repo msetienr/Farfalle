@@ -26,7 +26,7 @@ const Navbar = () => {
                 <FaBars onClick={(toggle)}/>
             </div>
             <div className="menu" style ={{top: isOpen ? "-100%" : 80}}>
-                <button className="login" onClick={() => loginWithRedirect()}>   Iniciar Sesión   </button>
+                <div><button className="login" onClick={() => loginWithRedirect()}>Iniciar Sesión</button></div>
                 {menuData.map((item) => (
                     <NavLink to={item.path} key={item.name}>
                         <div className="list_item">

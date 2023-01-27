@@ -13,7 +13,6 @@ const App = () => {
         <Routes>
           <Route path = '/' element = {<Inicio/>}/> 
           <Route path = '/Pedidos' element = {<Pedidos/>}/>
-          <Route path = '/IniciarSesion' element = {<IniciarSesion/>}/>
         </Routes>
       </BrowserRouter>
     </div>

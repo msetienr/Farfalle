@@ -3,8 +3,10 @@ import { NavLink } from 'react-router-dom';
 import '../Styles/main.css';
 import {FaBars} from 'react-icons/fa';
 import { useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
+    const { loginWithRedirect } = useAuth0();
     const menuData = [
         {
             path:'/',
@@ -13,13 +15,7 @@ const Navbar = () => {
         {
             path:'/Pedidos',
             name:"Pedidos"
-        },
-        {
-            path:'/IniciarSesion',
-            name:"Iniciar Sesion"
         }
-        
-        
     ]
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
@@ -30,12 +26,16 @@ const Navbar = () => {
                 <FaBars onClick={(toggle)}/>
             </div>
             <div className="menu" style ={{top: isOpen ? "-100%" : 80}}>
+                <button className="login" onClick={() => loginWithRedirect()}>   Iniciar Sesión   </button>
                 {menuData.map((item) => (
                     <NavLink to={item.path} key={item.name}>
-                        <div className="list_item">{item.name}</div>
+                        <div className="list_item">
+                            {item.name}
+                        </div>
                     </NavLink>
                 ))}
             </div>
+
         </nav>
         
     );
